@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice Virtuale</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <!-- Calcolatrice -->
+            <div class="calculator">
+                <!-- Titolo della calcolatrice posizionato sopra il display -->
+                <h1 class="title">Calcolatrice Virtuale</h1>
+                <input type="text" id="display" disabled />
+
+                <div class="buttons">
+                    <button class="btn" onclick="press('7')">7</button>
+                    <button class="btn" onclick="press('8')">8</button>
+                    <button class="btn" onclick="press('9')">9</button>
+                    <button class="btn" onclick="press('/')">/</button>
+
+                    <button class="btn" onclick="press('4')">4</button>
+                    <button class="btn" onclick="press('5')">5</button>
+                    <button class="btn" onclick="press('6')">6</button>
+                    <button class="btn" onclick="press('*')">x</button>
+
+                    <button class="btn" onclick="press('1')">1</button>
+                    <button class="btn" onclick="press('2')">2</button>
+                    <button class="btn" onclick="press('3')">3</button>
+                    <button class="btn" onclick="press('-')">-</button>
+
+                    <button class="btn" onclick="clearDisplay()">C</button>
+                    <button class="btn" onclick="press('0')">0</button>
+                    <button class="btn" onclick="calculate()">=</button>
+                    <button class="btn" onclick="press('+')">+</button>
+                </div>
+            </div>
+
+            <!-- Tabella accanto alla calcolatrice -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Oggetto</th>
+                            <th>Descrizione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Significato di (*) </td>
+                            <td>Il simbolo * è il simbolo PER "x", esiste questa versione del PER
+                                solamente nel mondo della programmazione, senza di quel simbolo
+                                non si potrebbero fare le moltiplicazioni</td>
+                        </tr>
+                        <tr>
+                            <td>Significato di (/)</td>
+                            <td>Il simbolo / è il simbolo DIVISO ":", esiste questa versione del DIVISO
+                                el mondo della programmazione, senza di quel simbolo
+                                non si potrebbero fare le divisioni</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- Avviso sotto la tabella -->
+                <div class="warning-container">
+                    <h2 class="warning"> ! ATTENZIONE ! </h2>
+                    <p class="warning-text">Questa calcolatrice (per scelta del programmatore) non sottostà alla legge matematica dei calcoli multipli.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link alla cronologia -->
+        <div class="history-link" onclick="openHistory()">
+            <p>Cronologia</p>
+        </div>
+
+        <!-- Modale cronologia -->
+        <div id="historyModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeHistory()">&times;</span>
+                <h2>Cronologia dei Calcoli</h2>
+                <ul id="historyList"></ul>
+                <!-- Pulsante Torna Indietro -->
+                <button class="btn-back" onclick="closeHistory()">Torna Indietro</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
